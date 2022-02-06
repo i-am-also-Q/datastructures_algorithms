@@ -1,6 +1,11 @@
 console.log('START');
 let x, y, sep;
 
+/* Build 2 arrays and store them into x, y */
+x = buildRandomArray();
+y = buildRandomArray();
+
+sep = '\n' + '=============== ===============' + '\n';
 
 /* This function will build a new array each time it is called. Try calling it inside of a sort function. */
 function buildRandomArray(a) {
@@ -8,12 +13,6 @@ function buildRandomArray(a) {
     a = Array(multi).fill().map(() => Math.round(Math.random() * multi));
     return a;
 }
-
-/* Build 2 arrays and store them into x, y */
-x = buildRandomArray();
-y = buildRandomArray();
-
-sep = '\n' + '=============== ===============' + '\n';
 
 /* Next 2 lines will call buildRandomArray and then bubble sort them. The sorted arrays should be different. */
 console.log(sep+'1st array. Length:'+x.length+'\n' + x + '\n\n'+
@@ -45,6 +44,5 @@ function destructureBubbleSort(a) {
     }
     return a;
 }
-
 
 console.log('END');
