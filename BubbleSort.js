@@ -1,5 +1,5 @@
 console.log('START');
-let x, y, sep;
+let x, y, sep, sortedA, sortedB;
 
 /* Build 2 arrays and store them into x, y */
 x = buildRandomArray();
@@ -13,13 +13,6 @@ function buildRandomArray(a) {
     a = Array(multi).fill().map(() => Math.round(Math.random() * multi));
     return a;
 }
-
-/* Next 2 lines will call buildRandomArray and then bubble sort them. The sorted arrays should be different. */
-console.log(sep+'1st array. Length:'+x.length+'\n' + x + '\n\n'+
-            y +'\n2nd array. Length:'+y.length+sep+'\n');
-console.log(sep+'1st buildRandomArray iteration sorted \n'+destructureBubbleSort(x)+'\n\n'+
-            destructureBubbleSort(y)+
-            '\n2nd buildRandomArray iteration sorted \n'+sep);
 
 function bubbleSort(a) {
     for (let i = 0; i < a.length - 1; i++) {
@@ -44,5 +37,23 @@ function destructureBubbleSort(a) {
     }
     return a;
 }
+
+function arrayLengthEvenOdd(remainder) {
+    if (remainder.length % 2 == 1) {
+        return " This array is odd. ";
+    } else if (remainder.length % 2 == 0) {
+        return " This array is even. ";
+    }
+
+}
+
+/* Next 2 lines will call buildRandomArray and then bubble sort them. The sorted arrays should be different. */
+function msg(){
+    console.log(sep+'1st array. Length:'+x.length+ arrayLengthEvenOdd(x) + '\n' + x + '\n\n'+ y +'\n2nd array. Length:'+y.length+ arrayLengthEvenOdd(y) +sep+'\n');
+    console.log(sep+'1st buildRandomArray iteration sorted \n' + destructureBubbleSort(x) + '\n\n' + destructureBubbleSort(y) + '\n2nd buildRandomArray iteration sorted \n' + sep);
+
+}
+
+msg()
 
 console.log('END');
