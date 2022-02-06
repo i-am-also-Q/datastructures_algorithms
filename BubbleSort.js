@@ -39,21 +39,20 @@ function destructureBubbleSort(a) {
 }
 
 function arrayLengthEvenOdd(remainder) {
+    let r = 0;
     if (remainder.length % 2 == 1) {
-        return " This array is odd. ";
+        return "Length: " + remainder.length + " This array is odd. ";
     } else if (remainder.length % 2 == 0) {
-        return " This array is even. ";
+        return "Length: " + remainder.length + " This array is even. ";
     }
 
 }
 
-/* Next 2 lines will call buildRandomArray and then bubble sort them. The sorted arrays should be different. */
 function msg(){
-    console.log(sep+'1st array. Length:'+x.length+ arrayLengthEvenOdd(x) + '\n' + x + '\n\n'+ y +'\n2nd array. Length:'+y.length+ arrayLengthEvenOdd(y) +sep+'\n');
-    console.log(sep+'1st buildRandomArray iteration sorted \n' + destructureBubbleSort(x) + '\n\n' + destructureBubbleSort(y) + '\n2nd buildRandomArray iteration sorted \n' + sep);
-
+    console.log(sep+'1st array. '+ arrayLengthEvenOdd(x) + '\n' + x + '\n' + '1st buildRandomArray iteration sorted \n' + bubbleSort(x));
+    console.log(sep+'2nd array. '+ arrayLengthEvenOdd(y) + '\n' + y + '\n' + '2nd buildRandomArray iteration sorted \n' + destructureBubbleSort(y));
 }
 
 msg()
 
-console.log('END');
+console.log('\nEND');
